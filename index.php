@@ -1,3 +1,9 @@
+<?php 
+    require 'class/User.php';
+    $user = new User();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -20,7 +26,24 @@
             <input type="submit" value="Entrar" class="btn">
             <a href="register.php">Não tem conta? Faça seu registro</a>
         </form>
-
     </section>
+
+    <?php 
+        if(isset($_POST['email']) and isset($_POST['password'])) {
+            $email = addslashes($_POST['email']);
+            $psw = addslashes($_POST['password']);
+
+            if(!empty($email) and !empty($psw)) {
+                $user->conect("login_project", "localhost", "root", "");
+                
+
+            } else {
+                echo "preencha todos os campos!";
+            }
+
+            
+            
+        }
+    ?>
 </body>
 </html>

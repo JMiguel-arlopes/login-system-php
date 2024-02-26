@@ -20,6 +20,7 @@ body {
   /* https://img.freepik.com/fotos-gratis/uma-pintura-de-um-lago-de-montanha-com-uma-montanha-ao-fundo_188544-9126.jpg */
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 .form {
@@ -95,4 +96,31 @@ body {
   text-align: left;
   text-decoration: none;
   color: #666;
+}
+
+.ntf-error {
+  background-color: rgb(255, 75, 75);
+}
+
+.ntf-sucess {
+  background-color: rgb(105, 255, 75);
+}
+
+.ntf-error,
+.ntf-sucess {
+  color: #000;
+  min-width: 420px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
 }

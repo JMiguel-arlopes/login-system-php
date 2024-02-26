@@ -1,3 +1,8 @@
+<?php 
+    require './class/User.php';
+    $user = new User();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -24,7 +29,42 @@
             <input type="submit" value="Cadastrar" class="btn">
             <a href="index.php">Voltar para o Login</a>
         </form>
-
     </section>
 </body>
 </html>
+
+<?php 
+    // $state = isset($_POST['name']);
+    if(isset($_POST['name'])) {
+        $name = addslashes($_POST['name']);
+        $email = addslashes($_POST['email']);
+        $password = addslashes($_POST['password']);
+
+        if(!empty($name) && !empty($password) && !empty($email)) {
+            $user->conect("login_project", "localhost", "root", "");
+            if($user->msgErro == "") {
+                if($user->register($name, $email, $password)) {
+                    ?>
+                        <span class="ntf-sucess">Cadastrado com sucesso, irmão!</span>;
+                    <?php
+                }else {
+                    ?>
+                        <span class="ntf-error"><?php echo $user->msgErro?></span>;
+                    <?php
+                };
+            } else {
+                    ?>
+                        <span class="ntf-error">
+                            <?php echo "erro: $user->msgErro" ?>
+                        </span>
+                    <?php
+            }
+        } else { 
+            ?>
+                <span class="ntf-error">
+                    Preencha todos os campos!
+                </span>;
+            <?php
+        }
+    }
+?>
