@@ -31,9 +31,7 @@
     }
 
       public function login($email, $password) {
-        global $pdo;
-
-        $sql = $pdo->prepare("SELECT ID from user WHERE email = :e AND password = :p");
+        $sql = $this->pdo->prepare("SELECT ID from user WHERE email = :e AND password = :p");
         $sql->bindValue(":e", $email);
         $sql->bindValue(":p", $password);
         $sql->execute();

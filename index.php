@@ -1,7 +1,6 @@
 <?php 
     require 'class/User.php';
     $user = new User();
-
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +34,11 @@
 
             if(!empty($email) and !empty($psw)) {
                 $user->conect("login_project", "localhost", "root", "");
-                
+                if($user->login($email, $psw)) {
+                    header('location: home.php');
+                } else {
+                    echo "Email ou Senha incorretos!";
+                }
 
             } else {
                 echo "preencha todos os campos!";
