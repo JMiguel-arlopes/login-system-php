@@ -16,7 +16,8 @@
         <form method="POST" class="form">
             <h2>Registre-se</h2>
             <div class="content-input">
-                <input name="name" type="text" placeholder="John Lopez" required>
+                <input name="
+                " type="text" placeholder="John Lopez" required>
                 <label for="name">Nome</label>
             </div>
             <div class="content-input">
