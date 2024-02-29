@@ -9,4 +9,5 @@
 
 
 <h1>BEM VINDOOOOOO!!</h1>
-<a href="">Voltar para Login</a>
+<br>
+<a href="exit.php">Voltar para Login</a>
