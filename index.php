@@ -37,11 +37,15 @@
                 if($user->login($email, $psw)) {
                     header('location: home.php');
                 } else {
-                    echo "Email ou Senha incorretos!";
+                    ?>
+                        <span class="ntf-error">Email ou Senha incorretos!</span>;
+                    <?php
                 }
 
             } else {
-                echo "preencha todos os campos!";
+                ?>
+                        <span class="ntf-error">Preencha todos os campos!</span>;
+                    <?php
             }
 
             
